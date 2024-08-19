@@ -1,0 +1,98 @@
+---
+import { ViewTransitions } from "astro:transitions"
+import "../css/global.css"
+import "../css/typography.css"
+
+interface Props {
+  title: string
+  description: string
+  canonicalURL: string
+  ogTitle: string
+  ogImage: string
+}
+
+const { title, description, canonicalURL, ogTitle, ogImage } = Astro.props
+---
+
+<!doctype html>
+<!--
+	Website Designer: Siavash Asadi
+    Email: siavash.asd01@gmail.com
+    Creation Date: August 2024
+	
+    Website Developer: Siavash Asadi
+    LinkedIn: https://www.linkedin.com/in/siavash-asadi/
+	
+Note: This website was created with a focus on user experience and accessibility. For any inquiries or collaborations, please contact me.	--><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://minervastudio.co/"
+    />
+    <link rel="alternate" hreflang="fa" href="https://minervastudio.co/fa/" />
+
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="fa_IR" />
+    <meta property="og:site_name" content="Minerva Studio" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content={title} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:site" content="@minervastudio" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2"
+    />
+    <meta name="theme-color" content="" />
+    <meta name="msapplication-TileColor" content="" />
+
+    <link rel="shortcut icon" href="/assets/fav/icon64.png" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/fav/icon32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/fav/icon16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/fav/apple-touch-icon.png"
+    />
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
