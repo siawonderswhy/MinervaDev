@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro"
 import Card from "../components/Card.astro"
 ---
 
-<Layout title="Minerva Testing Lab - Home">
+<Layout title="Minerva Testing Lab - Blog">
   <main>
     <svg
       class="astro-a"
@@ -33,17 +33,13 @@ import Card from "../components/Card.astro"
         </linearGradient>
       </defs>
     </svg>
+
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/blog">Blog</a>
 
-    <h1>Welcome to <span class="text-gradient">Minerva Studio Project</span></h1>
-    <p class="instructions">
-      To get started, open the directory <code>src/pages</code> in your project.<br
-      />
-      <strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
-      above.
-    </p>
+    <h1>My Astro Learning Blog</h1>
+    <p>This is where I will post about my journey learning Astro.</p>
     <ul role="list" class="link-card-grid">
       <Card
         href="https://docs.astro.build/"
@@ -65,7 +61,8 @@ import Card from "../components/Card.astro"
         title="Community"
         body="Come say hi to our amazing Discord community. ❤️"
       />
-      <Card href="/about" title="About" body="This is some new page! ❤️" />
+
+      <Card href="/" title="Home" body="This goes to the home page ❤️" />
     </ul>
   </main>
 </Layout>
