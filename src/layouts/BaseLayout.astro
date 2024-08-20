@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from "astro:transitions"
 import "../css/global.css"
+import "../css/variables.css"
 import "../css/typography.css"
 
 interface Props {
@@ -93,6 +94,25 @@ Note: This website was created with a focus on user experience and accessibility
   </head>
 
   <body>
-    <slot />
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <slot />
+      </div>
+    </div>
+    <script>
+      import { gsap } from "gsap-trial"
+      import ScrollTrigger from "gsap-trial/ScrollTrigger"
+      import ScrollSmoother from "gsap-trial/ScrollSmoother"
+
+      gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+
+      document.addEventListener("astro:page-load", () => {
+        const content = document.getElementById("smooth-content")
+        gsap.set(document.body, { height: content.clientHeight })
+        ScrollSmoother.create({
+          smooth: 1.5,
+        })
+      })
+    </script>
   </body>
 </html>

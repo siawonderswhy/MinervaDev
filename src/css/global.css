@@ -1,31 +1,11 @@
 :root {
-  --accent-800: #983514;
-  --accent-700: #bf430f;
-  --accent-600: #e75a0f;
-  --accent-500: #f56e0f;
-  --accent-400: #f8933f;
-  --accent-300: #fbba76;
-  --accent-200: #fdd7ab;
-  --accent-100: #feedd6;
-
-  --background-800: #1b1b1e;
-  --background-700: #1b1b1e;
-  --background-600: #1e1e1e;
-  --background-500: #262626;
-  --background-400: hsl(0 0% 30% / 1);
-  --background-300: hsl(0 0% 30% / 1);
-  --background-200: #878787;
-  --background-100: #878787;
-
-  --text-300: #fbfbfb;
-  --text-200: #fbfbfb;
-  --text-100: #fbfbfb;
-
   accent-color: var(--accent-500);
   color-scheme: dark;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -54,6 +34,6 @@ img {
 
 @media (prefers-reduced-motion: no-preference) {
   :has(:target) {
-      scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
 }
