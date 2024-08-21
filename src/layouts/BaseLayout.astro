@@ -4,6 +4,10 @@ import "../css/global.css"
 import "../css/variables.css"
 import "../css/typography.css"
 
+// import { gsap } from "../assets/js/GSAP/gsap.min.js"
+// import { ScrollTrigger } from "../assets/js/GSAP/ScrollTrigger.min.js"
+// import { ScrollSmoother } from "../assets/js/GSAP/ScrollSmoother.min.js"
+
 interface Props {
   title: string
   description: string
@@ -99,20 +103,10 @@ Note: This website was created with a focus on user experience and accessibility
         <slot />
       </div>
     </div>
-    <script>
-      // import { gsap } from "gsap-trial"
-      // import ScrollTrigger from "gsap-trial/ScrollTrigger"
-      // import ScrollSmoother from "gsap-trial/ScrollSmoother"
 
-      // gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-
-      // document.addEventListener("astro:page-load", () => {
-      //   const content = document.getElementById("smooth-content")
-      //   gsap.set(document.body, { height: content.clientHeight })
-      //   ScrollSmoother.create({
-      //     smooth: 1.5,
-      //   })
-      // })
-    </script>
+    <script defer src="src/assets/js/GSAP/gsap.min.js"></script>
+    <script defer src="src/assets/js/GSAP/ScrollTrigger.min.js"></script>
+    <script defer src="src/assets/js/GSAP/ScrollSmoother.min.js"></script>
+    <script defer src="src/assets/js/GSAP/MainAnimations.js"></script>
   </body>
 </html>
