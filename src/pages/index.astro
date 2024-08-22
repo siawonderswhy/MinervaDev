@@ -1,5 +1,6 @@
 ---
 import Head from "../layouts/BaseLayout.astro"
+import BreakTextLines from "../components/BreakTextLines.astro";
 ---
 
 <Head
@@ -11,6 +12,10 @@ import Head from "../layouts/BaseLayout.astro"
 >
   <main>
     <nav></nav>
+
+    <BreakTextLines>Lorem ipsum dolor</BreakTextLines>
+    <BreakTextLines> sit amet consectetur adipisicing elit?</BreakTextLines>
+    <BreakTextLines> Blanditiis recusandae a commodi cum sunt</BreakTextLines>
 
     <h1 style="height: 50vh;">
       Why to <span class="text-gradient">Minerva Studio</span>
