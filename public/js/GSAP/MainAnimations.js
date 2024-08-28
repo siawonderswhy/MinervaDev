@@ -20,5 +20,5 @@ gsap.from(split.words, {
   duration: 0.86,
   y: "100%",
   ease: "power4",
-  stagger: 0.186,
+  stagger: 0.086, //Time between each word
 })
