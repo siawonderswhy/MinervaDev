@@ -21,4 +21,7 @@ gsap.from(split.words, {
   y: "100%",
   ease: "power4",
   stagger: 0.086, //Time between each word
+  onComplete: function () {
+    split.revert() // Revert the split text after the animation is complete
+  },
 })

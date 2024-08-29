@@ -1,19 +1,13 @@
 ---
-interface Props {
-  fontSize: string
-}
 
-const { fontSize } = Astro.props
 ---
 
-<div id="LineSplitWrapper" >
-  <div id="LineSplit" class={fontSize}>
+<div id="LineSplit" >
     <slot  />
-  </div>
 </div>
 
 <style>
-  #LineSplitWrapper {
+  #LineSplit {
     overflow: hidden;
   }
 </style>
