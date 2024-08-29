@@ -14,13 +14,15 @@ import BreakTextLines from "../components/BreakTextLines.astro"
     <nav></nav>
 
 
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 90vh;">
 
-    <h1 style="margin-bottom: 10vh;">All Eyes on Your Brand</h1>
-    <h2 style="margin-bottom: 10vh;">All Eyes on Your Brand</h2>
-    <h3 style="margin-bottom: 10vh;">All Eyes on Your Brand</h3>
-    <h4 style="margin-bottom: 10vh;">All Eyes on Your Brand</h4>
-    <h5 style="margin-bottom: 10vh;">All Eyes on Your Brand</h5>
-    <h6 style="margin-bottom: 10vh;">All Eyes on Your Brand</h6>
-    <p style="margin-bottom: 10vh;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iusto excepturi odit debitis dolores nesciunt voluptates animi nihil in unde explicabo error alias, ipsam vitae hic. Impedit rerum id eaque!</p>
+
+  <BreakTextLines>
+    <h1 style="margin-bottom: 2vh;">All Eyes on Your <span id="changing-word" style="color: var(--accent-400);">
+      Brand
+    </span></h1>
+  </BreakTextLines>
+  <p>Minerva Studio delivers premium branding, logo design, and web solutions to elevate your business. Our expert team creates impactful brand identities and stunning websites that drive success.</p>
+</div>
   </main>
 </Head>

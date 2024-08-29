@@ -25,3 +25,17 @@ gsap.from(split.words, {
     split.revert() // Revert the split text after the animation is complete
   },
 })
+
+
+
+const words = [
+  "Catalog",
+  "Brochure",
+  "Business Card",
+  "Logo",
+  "Mascot",
+  "Teaser",
+  "Merchandise",
+  "Billboard",
+  "Website",
+]

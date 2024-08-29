@@ -21,7 +21,7 @@
 
 body {
   touch-action: pan-y;
-  background: var(--background-500);
+  background: var(--background-800);
   min-height: 100svh;
   scrollbar-gutter: stable;
   -webkit-text-size-adjust: none;

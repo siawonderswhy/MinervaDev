@@ -1,26 +1,21 @@
 :root {
-  --accent-800: #983514;
-  --accent-700: #bf430f;
-  --accent-600: #e75a0f;
-  --accent-500: #f56e0f;
-  --accent-400: #f8933f;
-  --accent-300: #fbba76;
-  --accent-200: #fdd7ab;
-  --accent-100: #feedd6;
+    --accent-50: #dbfffb;
+    --accent-100: #9efff5;
+    --accent-200: #00fae4;
+    --accent-300: #05e0d3;
+    --accent-400: #13c3bd;
+    --accent-500: #00a8a5;
+    --accent-600: #008e8f;
+    --accent-700: #027274;
+    --accent-800: #075c5f;
+    --accent-900: #0b4f50;
+    --accent-950: #002f33;
 
-  --background-800: #1b1b1e;
-  --background-700: #1b1b1e;
-  --background-600: #1e1e1e;
-  --background-500: #262626;
-  --background-400: hsl(0 0% 30% / 1);
-  --background-300: hsl(0 0% 30% / 1);
-  --background-200: #878787;
-  --background-100: #878787;
 
-  --text-300: #fbfbfb;
-  --text-200: #fbfbfb;
-  --text-100: #fbfbfb;
-
-  accent-color: var(--accent-500);
-  color-scheme: dark;
+    --background-500: #002f33;
+    --background-600: #002529;
+    --background-700: #001d21;
+    --background-800: #02171a;
+    --background-900: #031315;
+    --background-950: #000b0d;
 }

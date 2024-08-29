@@ -7,7 +7,7 @@
 body {
   direction: ltr;
   font-weight: 600;
-  color: var(--text-100);
+  color: var(--accent-50);
   -webkit-font-smoothing: antialiased;
   word-spacing: calc(-0.12 * 1em);
 }
