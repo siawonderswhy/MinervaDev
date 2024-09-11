@@ -1,6 +1,7 @@
 ---
 import Head from "../layouts/BaseLayout.astro"
 import BreakTextLines from "../components/BreakTextLines.astro"
+import BreakTextChars from "../components/BreakTextChars.astro"
 ---
 
 <Head
@@ -13,16 +14,39 @@ import BreakTextLines from "../components/BreakTextLines.astro"
   <main>
     <nav></nav>
 
+    <BreakTextLines>
+        <h1 style="margin-bottom: 2vh;">
+          All Eyes on Your ‌
+          <BreakTextChars
+            words={[
+              "Brand",
+              "Logo",
+              "Catalog",
+              "Brochure",
+              "Website",
+              "Billboard",
+              "Info-Card",
+              "Merchandise",
+              "Teaser",
+              "Mascot",
+              "Brand",
+            ]}
+      
+          />
+        </h1>
+      </BreakTextLines>
 
-<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 90vh;">
 
 
-  <BreakTextLines>
-    <h1 style="margin-bottom: 2vh;">All Eyes on Your <span id="changing-word" style="color: var(--accent-400);">
-      Brand
-    </span></h1>
-  </BreakTextLines>
-  <p>Minerva Studio delivers premium branding, logo design, and web solutions to elevate your business. Our expert team creates impactful brand identities and stunning websites that drive success.</p>
-</div>
+      <!-- <h3>
+        ABBAS
+        <BreakTextChars words={["alo", "jeksi"]}></BreakTextChars>
+      </h3> -->
+    <!-- <p>
+        Minerva Studio delivers premium branding, logo design, and web solutions
+        to elevate your business. Our expert team creates impactful brand
+        identities and stunning websites that drive success.
+      </p> -->
   </main>
+  <style></style>
 </Head>

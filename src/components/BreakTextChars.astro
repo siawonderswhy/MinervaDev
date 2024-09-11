@@ -1,0 +1,23 @@
+---
+const { words } = Astro.props
+---
+
+<div class="rotating-text">
+  {words.map((word) => <span class="word">{word}</span>)}
+</div>
+
+<style>
+  .rotating-text {
+    display: inline;
+    color: var(--accent-400);
+  }
+
+  .word {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  :global(.char-inline) {
+    display: inline-block !important;
+  }
+</style>
