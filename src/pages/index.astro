@@ -9,12 +9,21 @@ import BreakTextChars from "../components/BreakTextChars.astro"
   description="Minerva Studio delivers premium branding, logo design, and web solutions to elevate your business. Our expert team creates impactful brand identities and stunning websites that drive success."
   canonicalURL="https://minervastudio.co/"
   ogTitle="Minerva Studio"
-  ogImage="/"
+  ogImage="/assets/og/homepage-og.jpg"
 >
   <main>
     <nav></nav>
 
-    <BreakTextLines>
+    <div class="under-construction">
+      <img src="/assets/under-contstruction.png">
+      <BreakTextLines>
+        <h1>Under Construction</h1>
+      </BreakTextLines>
+
+
+    </div>
+
+    <!-- <BreakTextLines>
         <h1 style="margin-bottom: 2vh;">
           All Eyes on Your ‌
           <BreakTextChars
@@ -34,19 +43,28 @@ import BreakTextChars from "../components/BreakTextChars.astro"
       
           />
         </h1>
-      </BreakTextLines>
+      </BreakTextLines> -->
 
-
-
-      <!-- <h3>
-        ABBAS
-        <BreakTextChars words={["alo", "jeksi"]}></BreakTextChars>
-      </h3> -->
-    <!-- <p>
-        Minerva Studio delivers premium branding, logo design, and web solutions
-        to elevate your business. Our expert team creates impactful brand
-        identities and stunning websites that drive success.
-      </p> -->
   </main>
-  <style></style>
+  <style>
+
+    .under-construction {
+      overflow: hidden;
+      display: flex;
+      position: relative;
+      justify-content: center;
+    }
+
+    .under-construction img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    :global(.under-construction #LineSplit) {
+      position: absolute;
+      bottom: 15%;
+    }
+  </style>
 </Head>
