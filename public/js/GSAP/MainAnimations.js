@@ -16,7 +16,7 @@ var split = new SplitText(lineSplitElements, {
   type: "words",
 })
 gsap.from(split.words, {
-  delay: 0.386,
+  delay: 2.5,
   duration: 0.86,
   y: "100%",
   ease: "power4",
