@@ -300,12 +300,12 @@
 
 .services-information h2 {
   white-space: pre-line;
-  color: var(--accent-400);
+  color: var(--accent-200);
   line-height: 1.1em;
 }
 
 .services-information h2 span {
-  color: var(--accent-200);
+  color: var(--accent-400);
 }
 
 .service-type {
