@@ -19,6 +19,13 @@ import Banner from "../images/projects/Banner.png"
 import Website from "../images/projects/Website.png"
 import LogoDesign from "../images/projects/LogoDesign.png"
 import Packaging from "../images/projects/Packaging.png"
+
+import Branding from "../images/services/Branding.png"
+import VisualIdentity from "../images/services/VisualIdentity.png"
+import WebsiteService from "../images/services/Website.png"
+import Prints from "../images/services/PrintedObjects.png"
+import Photography from "../images/services/PhotoAndVideo.png"
+import ContentCreation from "../images/services/ContentCreation.png"
 ---
 
 <Head
@@ -1017,9 +1024,52 @@ import Packaging from "../images/projects/Packaging.png"
     </div>
 
 
-    <!-- <div class="services">
-
-    </div> -->
+    <div class="services">
+      <div class="services-information">
+        <h2>Let’s bring your <span>brand</span>
+          to life with design that
+          speaks volumes.</h2>
+        <div class="services-list">
+          <div class="service-type" data-image={Branding.src}>
+            [Branding]
+            <div class="service-detail">
+              We amplify your brand’s presence, seamlessly navigating it into the digital landscape.
+            </div>
+          </div>
+          <div class="service-type" data-image={VisualIdentity.src}>
+            [Visual Identity]
+            <div class="service-detail">
+              We craft compelling visual identities, ensuring your brand stands out with timeless and memorable design.
+            </div>
+          </div>
+          <div class="service-type" data-image={WebsiteService.src}>
+            [Website]
+            <div class="service-detail">
+              We design intuitive, aesthetically striking websites that bring your brand's story to life in the digital world.
+            </div>
+          </div>
+          <div class="service-type" data-image={Prints.src}>
+            [Printed Objects]
+            <div class="service-detail">
+              We create beautifully designed printed materials, connecting your brand with tactile, lasting impressions.
+            </div>
+          </div>
+          <div class="service-type" data-image={Photography.src}>
+            [Photo and Videography]
+            <div class="service-detail">
+              We capture stunning visuals that convey your brand's essence, delivering stories that resonate and inspire.
+            </div>
+          </div>
+          <div class="service-type" data-image={ContentCreation.src}>
+            [Content Creation]
+            <div class="service-detail">
+              We curate impactful social media strategies, ensuring your brand thrives with engaging content and meaningful connections.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-image" id="serviceImage"></div>
+    </div>
 
 
     <footer>
@@ -1046,26 +1096,39 @@ import Packaging from "../images/projects/Packaging.png"
       </div>
     </footer>
   </main>
-  <style>
-    .under-construction {
-      overflow: hidden;
-      display: flex;
-      position: relative;
-      justify-content: center;
-    }
 
-    .under-construction img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      object-position: center;
-    }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const serviceTypes = document.querySelectorAll('.service-type');
+  const serviceImage = document.getElementById('serviceImage');
+  
+  // Default image
+  const defaultImage = serviceTypes[0].getAttribute('data-image');
+  serviceImage.style.backgroundImage = `url(${defaultImage})`;
+  
+  serviceTypes.forEach(service => {
+    service.addEventListener('mouseover', () => {
+      const image = service.getAttribute('data-image');
+      if (image) {
+        serviceImage.classList.add('hidden');
+        setTimeout(() => {
+          serviceImage.style.backgroundImage = `url(${image})`;
+          serviceImage.classList.remove('hidden');
+        }, 100); // Match the transition duration
+      }
+    });
+  });
+  
+  document.querySelector('.services-list').addEventListener('mouseleave', () => {
+    serviceImage.classList.add('hidden');
+    setTimeout(() => {
+      serviceImage.style.backgroundImage = `url(${defaultImage})`;
+      serviceImage.classList.remove('hidden');
+    }, 100);
+  });
+});
 
-    :global(.under-construction #LineSplit) {
-      position: absolute;
-      bottom: 15%;
-    }
-  </style>
+  </script>
 </Head>
 
 <!-- <div class="under-construction">
