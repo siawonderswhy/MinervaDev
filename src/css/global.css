@@ -20,6 +20,14 @@
   cursor:default;
 }
 
+a {
+  cursor: pointer;
+}
+
+a:visited {
+  color: unset;
+}
+
 body {
   touch-action: pan-y;
   background: var(--background-800);

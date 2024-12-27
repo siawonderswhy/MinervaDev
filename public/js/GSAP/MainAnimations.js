@@ -16,7 +16,6 @@ var split = new SplitText(lineSplitElements, {
   type: "words",
 })
 gsap.from(split.words, {
-  delay: 2.5,
   duration: 0.86,
   y: "100%",
   ease: "power4",
@@ -137,3 +136,24 @@ for (let i = 0; i < length; i++) {
     lastStaggerLength = splitted.chars.length
   }
 }
+
+const portfolioContainer = document.querySelector(".project-card-container")
+const totalScrollWidth =
+  portfolioContainer.scrollWidth - window.innerWidth + window.innerWidth * 0.05
+const projectCards = document.querySelectorAll(".project-card")
+const snapPoints = Array.from(projectCards).map(
+  (_, index) => -index * window.innerWidth
+)
+
+gsap.to(portfolioContainer, {
+  x: -totalScrollWidth, // Moves the container horizontally
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".portfolio",
+    start: "top top",
+    end: () => `+=${totalScrollWidth}`, // Matches horizontal scroll length
+    scrub: true,
+    pin: true, // Pins the section
+    anticipatePin: 1,
+  },
+})
