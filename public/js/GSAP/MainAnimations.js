@@ -7,7 +7,7 @@ document.addEventListener("astro:page-load", () => {
   gsap.set(document.body, { height: content.clientHeight })
   ScrollSmoother.create({
     smooth: 0.86,
-    smoothTouch: 0.2,
+    smoothTouch: 0,
   })
 })
 
@@ -137,23 +137,36 @@ for (let i = 0; i < length; i++) {
   }
 }
 
-const portfolioContainer = document.querySelector(".project-card-container")
-const totalScrollWidth =
-  portfolioContainer.scrollWidth - window.innerWidth + window.innerWidth * 0.05
-const projectCards = document.querySelectorAll(".project-card")
-const snapPoints = Array.from(projectCards).map(
-  (_, index) => -index * window.innerWidth
-)
+function initGSAPAnimation() {
+  // Only run the animation if the screen width is greater than or equal to 1000px
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    const portfolioContainer = document.querySelector(".project-card-container");
+    const totalScrollWidth =
+      portfolioContainer.scrollWidth - window.innerWidth + window.innerWidth * 0.05;
+    const projectCards = document.querySelectorAll(".project-card");
+    const snapPoints = Array.from(projectCards).map(
+      (_, index) => -index * window.innerWidth
+    );
 
-gsap.to(portfolioContainer, {
-  x: -totalScrollWidth, // Moves the container horizontally
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".portfolio",
-    start: "top top",
-    end: () => `+=${totalScrollWidth}`, // Matches horizontal scroll length
-    scrub: true,
-    pin: true, // Pins the section
-    anticipatePin: 1,
-  },
-})
+    gsap.to(portfolioContainer, {
+      x: -totalScrollWidth, // Moves the container horizontally
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".portfolio",
+        start: "top top",
+        end: () => `+=${totalScrollWidth}`, // Matches horizontal scroll length
+        scrub: true,
+        pin: true, // Pins the section
+        anticipatePin: 1,
+      },
+    });
+  } else {
+    console.log("Screen width is below 1000px. GSAP animation disabled.");
+  }
+}
+
+// Initialize the GSAP animation on page load
+initGSAPAnimation();
+
+// Re-check and apply animations when the window is resized
+window.addEventListener("resize", initGSAPAnimation);

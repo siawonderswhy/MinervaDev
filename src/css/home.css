@@ -78,6 +78,7 @@
   background-position: 50% 100%;
   width: 100%;
   display: flex;
+  height: 130svh;
   position: relative;
 }
 
@@ -374,7 +375,7 @@
 }
 
 .service-detail::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 1px;
@@ -387,19 +388,26 @@
   width: 50%;
   background-size: cover;
   background-position: center;
-  transition: opacity 0.2s linear;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   height: 90%;
   align-self: center;
   border-radius: 8px;
-  box-shadow: -2752px 2282px 1001px 0px rgba(0, 150, 148, 0%), -1761px 1460px 915px 0px rgba(0, 150, 148, 2%), -991px 821px 772px 0px rgba(0, 150, 148, 6%), -440px 365px 572px 0px rgba(0, 150, 148, 10%), -110px 91px 315px 0px rgba(0, 150, 148, 12%);
+  box-shadow: -2752px 2282px 1001px 0px rgba(0, 150, 148, 0%),
+    -1761px 1460px 915px 0px rgba(0, 150, 148, 2%),
+    -991px 821px 772px 0px rgba(0, 150, 148, 6%),
+    -440px 365px 572px 0px rgba(0, 150, 148, 10%),
+    -110px 91px 315px 0px rgba(0, 150, 148, 12%);
 }
 
 .service-image.hidden {
-  opacity: 0;
+  background: var(--background-700);
+  background-size: cover;
+  background-position: center;
 }
 
 .service-image.visible {
-  opacity: 1;
+  background-size: cover;
+  background-position: center;
 }
 
 footer {
@@ -469,4 +477,143 @@ footer .info {
 
 footer .info img {
   max-width: 33vw;
+}
+
+@media (max-width: 1000px) {
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  .hero-info-container p {
+    font-size: unset;
+  }
+  .hero-gem-top,
+  .hero-gem-bottom {
+    align-self: center;
+    width: 140vh;
+  }
+
+  .intro {
+    flex-direction: column;
+    height: unset;
+  }
+
+  .introduction-text {
+    top: 5vh;
+    align-items: center;
+    text-align: center;
+  }
+
+  .introduction-text h2 {
+    white-space: unset;
+    width: 90%;
+  }
+
+  .introduction-text p {
+    width: 59%;
+  }
+  .introduction-features {
+    flex-direction: column;
+    gap: 40px;
+    bottom: unset;
+    margin-inline: 0;
+    width: 100%;
+    text-align: center;
+    padding-inline: 22%;
+  }
+
+  .features {
+    gap: 40px;
+  }
+
+  .feature-card {
+    max-width: unset;
+  }
+
+  .features.right {
+    text-align: unset;
+  }
+
+  .portfolio-info-container {
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  .portfolio {
+    height: unset;
+  }
+
+  .portfolio-details {
+    margin-left: unset;
+    padding: 48px 0 8px 0;
+  }
+
+  .portfolio-controls {
+    display: none;
+  }
+
+  .project-card-container {
+    overflow-x: scroll;
+    grid-auto-columns: 90%;
+  }
+
+  .project-card img {
+    width: 100%;
+  }
+
+  .project-card {
+    flex-direction: column;
+    box-shadow: none;
+  }
+
+  .project-details {
+    height: 100%;
+  }
+
+  .services {
+    flex-direction: column;
+    margin-top: 5vh;
+    height: unset;
+    padding-top: unset;
+  }
+
+  .services-information {
+    width: 100%;
+  }
+
+  .services-list {
+    margin-top: 5vh;
+  }
+
+  .service-type .service-detail {
+    width: 100%;
+  }
+
+  .service-image {
+    display: none;
+  }
+
+  footer p {
+    font-size: unset;
+  }
+
+  .footer-details {
+    flex-direction: column;
+    margin-inline: 5%;
+    height: 60%;
+  }
+
+  footer .links {
+    width: 100%;
+    border-right: none;
+    align-items: center;
+  }
+
+  footer .info {
+    text-align: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: auto;
+  }
 }

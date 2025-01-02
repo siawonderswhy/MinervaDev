@@ -1,12 +1,15 @@
 ---
+import { Image } from "astro:assets"
+
 import Head from "../layouts/BaseLayout.astro"
 import "../css/home.css"
 import logo from "../images/logo.svg"
-import BreakTextLines from "../components/BreakTextLines.astro"
-import BreakTextChars from "../components/BreakTextChars.astro"
-import { Image } from "astro:assets"
-import myImg from "../images/under-construction.png"
-import heroGemTop from "../svg/HeroGemstoneTop.svg"
+// import BreakTextLines from "../components/BreakTextLines.astro"
+// import BreakTextChars from "../components/BreakTextChars.astro"
+// import myImg from "../images/under-construction.png"
+// import heroGemTop from "../svg/HeroGemstoneTop.svg"
+
+
 import YearsIcon from "../svg/YearsIcon.svg"
 import ClientsIcon from "../svg/ClientsIcon.svg"
 import CountriesIcon from "../svg/CountriesIcon.svg"
@@ -44,7 +47,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
           <img src={logo.src} alt="Minerva Studio Logo" />
         </div>
         <div class="nav-links">
-          <a href="">Let's Connect</a>
+          <a href="#contact">Let's Connect</a>
           <a href="">Menu</a>
         </div>
       </nav>
@@ -272,7 +275,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
       </div>
     </div>
 
-    <div class="intro">
+    <div class="intro" id="introduction">
       <div class="hero-gem-bottom">
         <svg
           viewBox="0 0 1512 1099"
@@ -941,7 +944,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
         <div class="features right">
           <div class="feature-card">
             <img src={YearsIcon.src} alt="Number of Years in industry" />
-            <p class="feature-title">+5 Years</p>
+            <p class="feature-title">+1 Years</p>
             <p>Shaping brands with passion and precision</p>
           </div>
           <div class="feature-card">
@@ -953,7 +956,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
       </div>
     </div>
 
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio">
       <div class="portfolio-info-container">
         <h2>See our <span>vision</span>
           in action.</h2>
@@ -974,7 +977,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
 
         <div class="project-card-container">
           <div class="project-card">
-            <img src={Brochure.src} alt="Brochure Demo">
+            <Image width={1280} quality={100} format="webp" src={Brochure} alt="Brochure Project" />
             <div class="project-details">
               <p class="project-type">[Brochure]</p>
               <p class="project-title">Delivering high-quality brochures with clarity and elegance</p>
@@ -983,7 +986,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
             </div>
           </div>
           <div class="project-card">
-            <img src={Banner.src} alt="Banner Demo">
+            <Image width={1280} quality={100} format="webp" src={Banner} alt="Banner Project" />
             <div class="project-details">
               <p class="project-type">[Banner]</p>
               <p class="project-title">Bold and Impactful Banners, Tailored for Your Brand</p>
@@ -992,7 +995,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
             </div>
           </div>
           <div class="project-card">
-            <img src={Packaging.src} alt="Packaging Demo">
+            <Image width={1280} quality={100} format="webp" src={Packaging} alt="Packaging Project" />
             <div class="project-details">
               <p class="project-type">[Packaging]</p>
               <p class="project-title">Packaging That Tells a Story and Delivers Excellence</p>
@@ -1001,7 +1004,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
             </div>
           </div>
           <div class="project-card">
-            <img src={LogoDesign.src} alt="Logo Demo">
+            <Image width={1280} quality={100} format="webp" src={LogoDesign} alt="Logo Project" />
             <div class="project-details">
               <p class="project-type">[Logo]</p>
               <p class="project-title">Timeless Logo Designs That Speak Volumes</p>
@@ -1011,7 +1014,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
             </div>
           </div>
           <div class="project-card">
-            <img src={Website.src} alt="Website Demo">
+            <Image width={1280} quality={100} format="webp" src={Website} alt="Website Demo" />
             <div class="project-details">
               <p class="project-type">[Website]</p>
               <p class="project-title">Elevating Digital Presence with Stunning Website Design</p>
@@ -1024,7 +1027,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
     </div>
 
 
-    <div class="services">
+    <div class="services" id="services">
       <div class="services-information">
         <h2>Let’s bring your <span>brand</span>
           to life with design that
@@ -1072,7 +1075,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
     </div>
 
 
-    <footer>
+    <footer id="contact">
       <div class="footer-contact">
         <p>Reach out and let’s explore how we
           can elevate your brand together.</p>
@@ -1084,10 +1087,10 @@ import ContentCreation from "../images/services/ContentCreation.png"
       <div class="footer-details">
         <div class="links">
           <p>[Links]</p>
-          <a>/Home</a>
-          <a>/Services</a>
-          <a>/Portfolio</a>
-          <a>/Meet-the-team</a>
+          <a href="#">/Home</a>
+          <a href="#services">/Services</a>
+          <a href="#portfolio">/Portfolio</a>
+          <a href="#introduction">/Meet-the-team</a>
         </div>
         <div class="info">
           <img src={LogoType.src} alt="Minervar Design Studio">
@@ -1114,7 +1117,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
         setTimeout(() => {
           serviceImage.style.backgroundImage = `url(${image})`;
           serviceImage.classList.remove('hidden');
-        }, 100); // Match the transition duration
+        }, 00); // Match the transition duration
       }
     });
   });
@@ -1124,9 +1127,50 @@ import ContentCreation from "../images/services/ContentCreation.png"
     setTimeout(() => {
       serviceImage.style.backgroundImage = `url(${defaultImage})`;
       serviceImage.classList.remove('hidden');
-    }, 100);
+    }, 0);
   });
 });
+
+
+// Function to adjust the layout based on screen size
+function adjustIntroLayout() {
+  const intro = document.querySelector('.intro');
+  const introText = document.querySelector('.introduction-text');
+  const introFeatures = document.querySelector('.introduction-features');
+  
+  // Check if elements exist
+  if (!intro || !introText || !introFeatures) return;
+
+  // Get the viewport width
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 1000) {
+    // Get the height of the "introduction-text" div
+    const introTextHeight = introText.offsetHeight;
+
+    // Calculate the offset for "introduction-features"
+    const offset = `calc(5vh + ${introTextHeight}px + 5vh)`;
+    introFeatures.style.top = offset;
+
+    // Get the height of "introduction-features"
+    const featuresHeight = introFeatures.offsetHeight;
+
+    // Set the height of the "intro" div
+    const totalHeight = `calc(5vh + ${introTextHeight}px + 5vh + ${featuresHeight}px + 5vh)`;
+    intro.style.height = totalHeight;
+  } else {
+    // Reset styles when screen width is >= 1000px
+    intro.style.height = '';
+    introFeatures.style.top = '';
+  }
+}
+
+// Attach the resize event listener
+window.addEventListener('resize', adjustIntroLayout);
+
+// Call the function on initial load
+adjustIntroLayout();
+
 
   </script>
 </Head>
