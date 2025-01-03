@@ -180,6 +180,105 @@
   color: var(--accent-400);
 }
 
+.collection-link-rectangle {
+  cursor: pointer;
+  width: max-content;
+  background: var(--background-950);
+  padding: 2px;
+  border: 1px solid var(--accent-950);
+  border-radius: 24px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.collection-link-rectangle:hover::after {
+  transform: translate(0, -50%);
+  visibility: visible;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.collection-link-rectangle:hover p {
+  color: var(--background-950);
+}
+
+
+
+
+
+.collection-link-rectangle::after {
+  visibility: hidden;
+  content: '';
+  position: absolute;
+  inset: -1em;
+  aspect-ratio: 1;
+  background-color: var(--accent-50);
+  padding: 2px;
+  border: 1px solid var(--accent-950);
+  border-radius: 50%;
+  transform: translate(100%, 100%);
+  transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.collection-link {
+  width: max-content;
+  display: block;
+}
+
+.collection-link-rectangle p {
+  margin-left: 0.7em;
+  position: relative;
+  top: 0.1em;
+  z-index: 1;
+  transition: all 0.1s linear;
+}
+
+.collection-link-rectangle i {
+  width: 26px;
+  height: 26px;
+  padding: 2px;
+  display: inline-block;
+  margin-left: 12px;
+  background-color: var(--background-800);
+  border-radius: 50%;
+  border: 0.1px solid var(--accent-900);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.collection-link-rectangle:hover i::after {
+  transform: translate(0, 0);
+  z-index: 1;
+}
+
+.collection-link-rectangle:hover i {
+  border: none;
+}
+
+.collection-link-rectangle:hover i img {
+
+  filter: brightness(0.15);
+}
+
+.collection-link-rectangle i::after {
+  content: '';
+  position: absolute;
+  inset: -1em;
+  border-radius: 50%;
+  transform: translate(-100%, -100%);
+  background-color: var(--accent-50);
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.collection-link-rectangle i img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
 .portfolio-details {
   display: flex;
   flex-direction: column;
@@ -537,6 +636,10 @@ footer .info img {
 
   .portfolio-info-container {
     flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  .portfolio-collection-link {
     margin-bottom: 32px;
   }
 
@@ -616,4 +719,9 @@ footer .info img {
     gap: 24px;
     margin-top: auto;
   }
+  .footer-contact h1 {
+    width: unset;
+    font-size: xx-large;
+  }
+
 }
