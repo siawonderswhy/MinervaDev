@@ -62,9 +62,6 @@ p {
   letter-spacing: calc(-0.004 * 1em);
 }
 
-a {
-  text-decoration: none;
-}
 
 small {
   word-spacing: -0.5px;
