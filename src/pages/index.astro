@@ -4,11 +4,12 @@ import { Image } from "astro:assets"
 import Head from "../layouts/BaseLayout.astro"
 import "../css/home.css"
 import logo from "../images/logo.svg"
-// import BreakTextLines from "../components/BreakTextLines.astro"
-// import BreakTextChars from "../components/BreakTextChars.astro"
+import BreakTextLines from "../components/BreakTextLines.astro"
+import BreakTextChars from "../components/BreakTextChars.astro"
+import BreakTextLinesOnView from "../components/BreakTextLinesOnView.astro"
+import BreakTextLinesScrub from "../components/BreakTextLinesScrub.astro"
 // import myImg from "../images/under-construction.png"
 // import heroGemTop from "../svg/HeroGemstoneTop.svg"
-
 
 import YearsIcon from "../svg/YearsIcon.svg"
 import ClientsIcon from "../svg/ClientsIcon.svg"
@@ -40,13 +41,11 @@ import ContentCreation from "../images/services/ContentCreation.png"
   ogImage="/assets/og/homepage-og.jpg"
 >
   <main>
-    <!-- <nav></nav> -->
-
-    <div class="hero">
+    <div class="hero" id="home">
       <nav>
-        <div class="logo">
+        <a href="/#home" class="logo">
           <img src={logo.src} alt="Minerva Studio Logo" />
-        </div>
+        </a>
         <div class="nav-links">
           <a href="#contact">Let's Connect</a>
           <a href="">Menu</a>
@@ -55,11 +54,41 @@ import ContentCreation from "../images/services/ContentCreation.png"
 
       <div class="hero-info-container">
         <div class="est">EST. 2024</div>
-        <p>A creative Design studio
-          based in Tehran/Iran</p>
-          <h1>All Eyes On
-            Your <span>Brand</span>
-          </h1>
+        <div class="minerva-studio-info">
+          <BreakTextLines>
+            <p>A creative Design studio</p>
+          </BreakTextLines>
+
+          <BreakTextLines>
+            <p>based in Tehran/Iran</p>
+          </BreakTextLines>
+        </div>
+
+        <div class="minerva-studio-headings">
+          <BreakTextLines>
+            <h1>All Eyes On Your</h1>
+          </BreakTextLines>
+
+          <BreakTextLines>
+            <h1>
+              <BreakTextChars
+                words={[
+                  "Brand",
+                  "Logo",
+                  "Catalog",
+                  "Brochure",
+                  "Website",
+                  "Merchandise",
+                  "Billboard",
+                  "Info-Card",
+                  "Teaser",
+                  "Mascot",
+                  "Brand",
+                ]}
+              />
+            </h1>
+          </BreakTextLines>
+        </div>
       </div>
 
       <div class="hero-gem-top">
@@ -922,11 +951,16 @@ import ContentCreation from "../images/services/ContentCreation.png"
         </svg>
       </div>
       <div class="introduction-text">
-          <h2>
-            We blend timeless aesthetics with
-            modern innovation to craft
-            brands that <span>stand out.</span>
-          </h2>
+        <BreakTextLinesOnView>
+          <h2>We blend timeless aesthetics</h2>
+        </BreakTextLinesOnView>
+        <BreakTextLinesOnView>
+          <h2>with modern innovation to</h2>
+        </BreakTextLinesOnView>
+        <BreakTextLinesOnView>
+          <h2>craft brands that <span>stand out.</span></h2>
+        </BreakTextLinesOnView>
+
         <p>Transform your ideas → into brilliant gems of creativity.</p>
       </div>
       <div class="introduction-features">
@@ -934,6 +968,7 @@ import ContentCreation from "../images/services/ContentCreation.png"
           <div class="feature-card">
             <img src={ClientsIcon.src} alt="Number of Clients" />
             <p class="feature-title">+50 Clients</p>
+
             <p>Spanning industries from tech to luxury retail</p>
           </div>
           <div class="feature-card">
@@ -959,127 +994,207 @@ import ContentCreation from "../images/services/ContentCreation.png"
 
     <div class="portfolio" id="portfolio">
       <div class="portfolio-info-container">
-        <h2>See our <span>vision</span>
-          in action.</h2>
+        <h2>
+          <BreakTextLinesOnView>
+            See our <span>vision</span>
+          </BreakTextLinesOnView>
+          <BreakTextLinesOnView>in action.</BreakTextLinesOnView>
+        </h2>
         <div class="portfolio-details">
-          <p class="large">Portfolio</p>
-          <p>Experience how our vision comes to life
-            through every detail we create.</p>
+          <BreakTextLinesOnView>
+            <p class="large">Portfolio</p>
+          </BreakTextLinesOnView>
+
+          <p>
+            Experience how our vision comes to life through every detail we
+            create.
+          </p>
         </div>
         <div class="portfolio-controls">
           <div class="control left">
-            <img src={Arrow.src} alt="Previous">
+            <img src={Arrow.src} alt="Previous" />
           </div>
           <div class="control right">
-            <img src={Arrow.src} alt="Next">
+            <img src={Arrow.src} alt="Next" />
           </div>
         </div>
       </div>
 
       <div class="portfolio-collection-link">
-        <a href="https://drive.google.com/drive/folders/1qUpNEG5QxM7-UxbAl2haK5jbJWOf0dfE?usp=drive_link" class="collection-link" target="_blank">
-
+        <a
+          href="https://drive.google.com/drive/folders/1qUpNEG5QxM7-UxbAl2haK5jbJWOf0dfE?usp=drive_link"
+          class="collection-link"
+          target="_blank"
+        >
           <div class="collection-link-rectangle">
             <p>View Complete Projects Archive</p>
             <i>
-              <img src={GoogleDrive.src} alt="Google Drive Link for our Projects Archive">
+              <img
+                src={GoogleDrive.src}
+                alt="Google Drive Link for our Projects Archive"
+              />
             </i>
           </div>
         </a>
       </div>
 
-        <div class="project-card-container">
-          <div class="project-card">
-            <Image width={1280} quality={100} format="webp" src={Brochure} alt="Brochure Project" />
-            <div class="project-details">
-              <p class="project-type">[Brochure]</p>
-              <p class="project-title">Delivering high-quality brochures with clarity and elegance</p>
-              <p class="project-description">Minerva Studio crafted a sleek, minimalist brochure for Hirkan, reflecting their commitment to simplicity, precision, and exceptional quality.</p>
-              <a>Read More</a>
-            </div>
+      <div class="project-card-container">
+        <div class="project-card">
+          <Image
+            width={1280}
+            quality={100}
+            format="webp"
+            src={Brochure}
+            alt="Brochure Project"
+          />
+          <div class="project-details">
+            <p class="project-type">[Brochure]</p>
+            <p class="project-title">
+              Delivering high-quality brochures with clarity and elegance
+            </p>
+            <p class="project-description">
+              Minerva Studio crafted a sleek, minimalist brochure for Hirkan,
+              reflecting their commitment to simplicity, precision, and
+              exceptional quality.
+            </p>
+            <a>Read More</a>
           </div>
-          <div class="project-card">
-            <Image width={1280} quality={100} format="webp" src={Banner} alt="Banner Project" />
-            <div class="project-details">
-              <p class="project-type">[Banner]</p>
-              <p class="project-title">Bold and Impactful Banners, Tailored for Your Brand</p>
-              <p class="project-description">Minerva Studio designed an eye-catching banner for Iran Motor, blending vibrant visuals with strategic messaging to maximize engagement.</p>
-              <a>Read More</a>
-            </div>
+        </div>
+        <div class="project-card">
+          <Image
+            width={1280}
+            quality={100}
+            format="webp"
+            src={Banner}
+            alt="Banner Project"
+          />
+          <div class="project-details">
+            <p class="project-type">[Banner]</p>
+            <p class="project-title">
+              Bold and Impactful Banners, Tailored for Your Brand
+            </p>
+            <p class="project-description">
+              Minerva Studio designed an eye-catching banner for Iran Motor,
+              blending vibrant visuals with strategic messaging to maximize
+              engagement.
+            </p>
+            <a>Read More</a>
           </div>
-          <div class="project-card">
-            <Image width={1280} quality={100} format="webp" src={Packaging} alt="Packaging Project" />
-            <div class="project-details">
-              <p class="project-type">[Packaging]</p>
-              <p class="project-title">Packaging That Tells a Story and Delivers Excellence</p>
-              <p class="project-description">Minerva Studio designed premium, eco-friendly packaging for Vulcan, emphasizing sustainability and elegance.</p>
-              <a>Read More</a>
-            </div>
+        </div>
+        <div class="project-card">
+          <Image
+            width={1280}
+            quality={100}
+            format="webp"
+            src={Packaging}
+            alt="Packaging Project"
+          />
+          <div class="project-details">
+            <p class="project-type">[Packaging]</p>
+            <p class="project-title">
+              Packaging That Tells a Story and Delivers Excellence
+            </p>
+            <p class="project-description">
+              Minerva Studio designed premium, eco-friendly packaging for
+              Vulcan, emphasizing sustainability and elegance.
+            </p>
+            <a>Read More</a>
           </div>
-          <div class="project-card">
-            <Image width={1280} quality={100} format="webp" src={LogoDesign} alt="Logo Project" />
-            <div class="project-details">
-              <p class="project-type">[Logo]</p>
-              <p class="project-title">Timeless Logo Designs That Speak Volumes</p>
-              <p class="project-description">Minerva Studio developed a refined, modern logo for Hirkan, encapsulating their heritage and dedication to craftsmanship.
-              </p>
-              <a>Read More</a>
-            </div>
+        </div>
+        <div class="project-card">
+          <Image
+            width={1280}
+            quality={100}
+            format="webp"
+            src={LogoDesign}
+            alt="Logo Project"
+          />
+          <div class="project-details">
+            <p class="project-type">[Logo]</p>
+            <p class="project-title">
+              Timeless Logo Designs That Speak Volumes
+            </p>
+            <p class="project-description">
+              Minerva Studio developed a refined, modern logo for Hirkan,
+              encapsulating their heritage and dedication to craftsmanship.
+            </p>
+            <a>Read More</a>
           </div>
-          <div class="project-card">
-            <Image width={1280} quality={100} format="webp" src={Website} alt="Website Demo" />
-            <div class="project-details">
-              <p class="project-type">[Website]</p>
-              <p class="project-title">Elevating Digital Presence with Stunning Website Design</p>
-              <p class="project-description">For Iran Motor, Minerva Studio built a dynamic website with sleek functionality, perfectly aligned with their tech-forward vision.</p>
-              <a>Read More</a>
-            </div>
+        </div>
+        <div class="project-card">
+          <Image
+            width={1280}
+            quality={100}
+            format="webp"
+            src={Website}
+            alt="Website Demo"
+          />
+          <div class="project-details">
+            <p class="project-type">[Website]</p>
+            <p class="project-title">
+              Elevating Digital Presence with Stunning Website Design
+            </p>
+            <p class="project-description">
+              For Iran Motor, Minerva Studio built a dynamic website with sleek
+              functionality, perfectly aligned with their tech-forward vision.
+            </p>
+            <a>Read More</a>
           </div>
-
+        </div>
       </div>
     </div>
 
-
     <div class="services" id="services">
       <div class="services-information">
-        <h2>Let’s bring your <span>brand</span>
-          to life with design that
-          speaks volumes.</h2>
+        <h2>
+          <BreakTextLinesOnView>
+            Let’s bring your <span>brand</span>
+          </BreakTextLinesOnView>
+
+          <BreakTextLinesOnView>to life with design that</BreakTextLinesOnView>
+          <BreakTextLinesOnView>speaks volumes.</BreakTextLinesOnView>
+        </h2>
         <div class="services-list">
           <div class="service-type" data-image={Branding.src}>
             [Branding]
             <div class="service-detail">
-              We amplify your brand’s presence, seamlessly navigating it into the digital landscape.
+              We amplify your brand’s presence, seamlessly navigating it into
+              the digital landscape.
             </div>
           </div>
           <div class="service-type" data-image={VisualIdentity.src}>
             [Visual Identity]
             <div class="service-detail">
-              We craft compelling visual identities, ensuring your brand stands out with timeless and memorable design.
+              We craft compelling visual identities, ensuring your brand stands
+              out with timeless and memorable design.
             </div>
           </div>
           <div class="service-type" data-image={WebsiteService.src}>
             [Website]
             <div class="service-detail">
-              We design intuitive, aesthetically striking websites that bring your brand's story to life in the digital world.
+              We design intuitive, aesthetically striking websites that bring
+              your brand's story to life in the digital world.
             </div>
           </div>
           <div class="service-type" data-image={Prints.src}>
             [Printed Objects]
             <div class="service-detail">
-              We create beautifully designed printed materials, connecting your brand with tactile, lasting impressions.
+              We create beautifully designed printed materials, connecting your
+              brand with tactile, lasting impressions.
             </div>
           </div>
           <div class="service-type" data-image={Photography.src}>
             [Photo and Videography]
             <div class="service-detail">
-              We capture stunning visuals that convey your brand's essence, delivering stories that resonate and inspire.
+              We capture stunning visuals that convey your brand's essence,
+              delivering stories that resonate and inspire.
             </div>
           </div>
           <div class="service-type" data-image={ContentCreation.src}>
             [Content Creation]
             <div class="service-detail">
-              We curate impactful social media strategies, ensuring your brand thrives with engaging content and meaningful connections.
+              We curate impactful social media strategies, ensuring your brand
+              thrives with engaging content and meaningful connections.
             </div>
           </div>
         </div>
@@ -1087,104 +1202,105 @@ import ContentCreation from "../images/services/ContentCreation.png"
       <div class="service-image" id="serviceImage"></div>
     </div>
 
-
     <footer id="contact">
       <div class="footer-contact">
-        <p>Reach out and let’s explore how we
-          can elevate your brand together.</p>
-          <h1>
-            <a href="mailto:hello@minervastudio.co">hello@minervastudio.co</a>
-          </h1>
+        <BreakTextLinesOnView>
+          <p>
+            Reach out and let’s explore how we can elevate your brand together.
+          </p>
+        </BreakTextLinesOnView>
+        <h1>
+          <a href="mailto:hello@minervastudio.co">hello@minervastudio.co</a>
+        </h1>
       </div>
 
       <div class="footer-details">
         <div class="links">
           <p>[Links]</p>
-          <a href="#">/Home</a>
+          <a href="#home">/Home</a>
           <a href="#services">/Services</a>
           <a href="#portfolio">/Portfolio</a>
           <a href="#introduction">/Meet-the-team</a>
         </div>
         <div class="info">
-          <img src={LogoType.src} alt="Minervar Design Studio">
-          <p>2024 Minerva Studio - All rights reserved</p>
+          <img src={LogoType.src} alt="Minervar Design Studio" />
+          <p>2025 Minerva Studio - All rights reserved</p>
         </div>
       </div>
     </footer>
   </main>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-  const serviceTypes = document.querySelectorAll('.service-type');
-  const serviceImage = document.getElementById('serviceImage');
-  
-  // Default image
-  const defaultImage = serviceTypes[0].getAttribute('data-image');
-  serviceImage.style.backgroundImage = `url(${defaultImage})`;
-  
-  serviceTypes.forEach(service => {
-    service.addEventListener('mouseover', () => {
-      const image = service.getAttribute('data-image');
-      if (image) {
-        serviceImage.classList.add('hidden');
-        setTimeout(() => {
-          serviceImage.style.backgroundImage = `url(${image})`;
-          serviceImage.classList.remove('hidden');
-        }, 00); // Match the transition duration
+    document.addEventListener("DOMContentLoaded", () => {
+      const serviceTypes = document.querySelectorAll(".service-type")
+      const serviceImage = document.getElementById("serviceImage")
+
+      // Default image
+      const defaultImage = serviceTypes[0].getAttribute("data-image")
+      serviceImage.style.backgroundImage = `url(${defaultImage})`
+
+      serviceTypes.forEach((service) => {
+        service.addEventListener("mouseover", () => {
+          const image = service.getAttribute("data-image")
+          if (image) {
+            serviceImage.classList.add("hidden")
+            setTimeout(() => {
+              serviceImage.style.backgroundImage = `url(${image})`
+              serviceImage.classList.remove("hidden")
+            }, 00) // Match the transition duration
+          }
+        })
+      })
+
+      document
+        .querySelector(".services-list")
+        .addEventListener("mouseleave", () => {
+          serviceImage.classList.add("hidden")
+          setTimeout(() => {
+            serviceImage.style.backgroundImage = `url(${defaultImage})`
+            serviceImage.classList.remove("hidden")
+          }, 0)
+        })
+    })
+
+    // Function to adjust the layout based on screen size
+    function adjustIntroLayout() {
+      const intro = document.querySelector(".intro")
+      const introText = document.querySelector(".introduction-text")
+      const introFeatures = document.querySelector(".introduction-features")
+
+      // Check if elements exist
+      if (!intro || !introText || !introFeatures) return
+
+      // Get the viewport width
+      const screenWidth = window.innerWidth
+
+      if (screenWidth < 1000) {
+        // Get the height of the "introduction-text" div
+        const introTextHeight = introText.offsetHeight
+
+        // Calculate the offset for "introduction-features"
+        const offset = `calc(5vh + ${introTextHeight}px + 5vh)`
+        introFeatures.style.top = offset
+
+        // Get the height of "introduction-features"
+        const featuresHeight = introFeatures.offsetHeight
+
+        // Set the height of the "intro" div
+        const totalHeight = `calc(5vh + ${introTextHeight}px + 5vh + ${featuresHeight}px + 5vh)`
+        intro.style.height = totalHeight
+      } else {
+        // Reset styles when screen width is >= 1000px
+        intro.style.height = ""
+        introFeatures.style.top = ""
       }
-    });
-  });
-  
-  document.querySelector('.services-list').addEventListener('mouseleave', () => {
-    serviceImage.classList.add('hidden');
-    setTimeout(() => {
-      serviceImage.style.backgroundImage = `url(${defaultImage})`;
-      serviceImage.classList.remove('hidden');
-    }, 0);
-  });
-});
+    }
 
+    // Attach the resize event listener
+    window.addEventListener("resize", adjustIntroLayout)
 
-// Function to adjust the layout based on screen size
-function adjustIntroLayout() {
-  const intro = document.querySelector('.intro');
-  const introText = document.querySelector('.introduction-text');
-  const introFeatures = document.querySelector('.introduction-features');
-  
-  // Check if elements exist
-  if (!intro || !introText || !introFeatures) return;
-
-  // Get the viewport width
-  const screenWidth = window.innerWidth;
-
-  if (screenWidth < 1000) {
-    // Get the height of the "introduction-text" div
-    const introTextHeight = introText.offsetHeight;
-
-    // Calculate the offset for "introduction-features"
-    const offset = `calc(5vh + ${introTextHeight}px + 5vh)`;
-    introFeatures.style.top = offset;
-
-    // Get the height of "introduction-features"
-    const featuresHeight = introFeatures.offsetHeight;
-
-    // Set the height of the "intro" div
-    const totalHeight = `calc(5vh + ${introTextHeight}px + 5vh + ${featuresHeight}px + 5vh)`;
-    intro.style.height = totalHeight;
-  } else {
-    // Reset styles when screen width is >= 1000px
-    intro.style.height = '';
-    introFeatures.style.top = '';
-  }
-}
-
-// Attach the resize event listener
-window.addEventListener('resize', adjustIntroLayout);
-
-// Call the function on initial load
-adjustIntroLayout();
-
-
+    // Call the function on initial load
+    adjustIntroLayout()
   </script>
 </Head>
 
