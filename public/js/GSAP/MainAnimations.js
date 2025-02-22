@@ -1,5 +1,7 @@
+
 // Registration of GSAP Plugins
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, ScrollToPlugin)
+
 
 // Scroll Smoother for all Pages
   const content = document.getElementById("smooth-content")
@@ -144,7 +146,7 @@ for (let i = 0; i < length; i++) {
     anim.to(
       splitted.chars,
       {
-        y: "-110%",
+        y: "-200%",
         duration: duration,
         ease: "expo.out",
         stagger: staggerDelay,
@@ -160,7 +162,7 @@ for (let i = 0; i < length; i++) {
     anim.from(
       splitted.chars,
       {
-        y: "180%",
+        y: "200%",
         duration: duration,
         ease: "expo.out",
         stagger: staggerDelay,
@@ -176,7 +178,7 @@ for (let i = 0; i < length; i++) {
     anim.from(
       splitted.chars,
       {
-        y: "180%",
+        y: "200%",
         duration: duration,
         ease: "expo.out",
         stagger: staggerDelay,
@@ -188,7 +190,7 @@ for (let i = 0; i < length; i++) {
     anim.to(
       splitted.chars,
       {
-        y: "-110%",
+        y: "-200%",
         duration: duration,
         ease: "expo.out",
         stagger: staggerDelay,
@@ -197,6 +199,7 @@ for (let i = 0; i < length; i++) {
     )
 
     lastStaggerLength = splitted.chars.length
+    console.log(lastStaggerLength)
   }
 }
 
@@ -216,15 +219,13 @@ function initGSAPAnimation() {
       ease: "none",
       scrollTrigger: {
         trigger: ".portfolio",
-        start: "top top",
+        start: "top+=50 top",
         end: () => `+=${totalScrollWidth}`, // Matches horizontal scroll length
         scrub: true,
         pin: true, // Pins the section
         anticipatePin: 1,
       },
     });
-  } else {
-    console.log("Screen width is below 1000px. GSAP animation disabled.");
   }
 }
 

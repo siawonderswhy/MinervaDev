@@ -13,12 +13,13 @@
   }
 
   #LineSplit:has(h1) {
-    padding-bottom: 8px;
+    height: 6em;
   }
-
-  @media (max-width: 1000px;) {
-    #LineSplit {
-      padding-bottom: 0;
+  
+  @media (max-width: 1000px) {
+    #LineSplit:has(h1) {
+      height: unset;
+      padding-bottom: 2px;
     }
   }
 </style>
